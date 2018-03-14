@@ -94,7 +94,7 @@ class GymWrapper(WrapperBase):
         # Gym expects actions in different format depending on type of
         # action space
         if isinstance(self._env.action_space, gym.spaces.Discrete):
-            action = self._command_buffer[0][0]['value']
+            action = int(self._command_buffer[0][0]['value'])
         else:
             action = [self._command_buffer[0][0]['value']]
 
